@@ -1,32 +1,38 @@
-return  {
+return {
+  {
     "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
+    lazy = false,
+    keys = {
+      {
+        "<leader>fe",
+        function()
+          require("neo-tree.command").execute({ position = "right", toggle = true, dir = LazyVim.root() })
+        end,
+        desc = "Explorer NeoTree (Root Dir)",
+      },
+      {
+        "<leader>fE",
+        function()
+          require("neo-tree.command").execute({ position = "right", toggle = true, dir = vim.uv.cwd() })
+        end,
+        desc = "Explorer NeoTree (cwd)",
+      },
+      { "<leader>e", "<leader>fe", desc = "Explorer NeoTree (Root Dir)", remap = true },
+      { "<leader>E", "<leader>fE", desc = "Explorer NeoTree (cwd)", remap = true },
+      {
+        "<leader>ge",
+        function()
+          require("neo-tree.command").execute({ position = "right", source = "git_status", toggle = true })
+        end,
+        desc = "Git Explorer",
+      },
+      {
+        "<leader>be",
+        function()
+          require("neo-tree.command").execute({ position = "right", source = "buffers", toggle = true })
+        end,
+        desc = "Buffer Explorer",
+      },
     },
-    opts = function()
-        return {
-            filesystem = {
-                filtered_items = {
-                    visible = true,
-                    show_hidden_count = true,
-                    hide_dotfiles = false,
-                    hide_gitignored = true,
-                    hide_by_name = {
-                        --'.git',
-                        --'.DS_Store',
-                        --'thumbs.db',
-                        --'.mono',
-                    },
-                    never_show = {},
-                },
-            },
-        }
-    end,
-    config = function(_, opts)
-        vim.keymap.set('n', '<leader>e', ':Neotree filesystem reveal right<CR>')
-        require('neo-tree').setup(opts)
-    end,
+  },
 }
