@@ -2,23 +2,6 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     lazy = false,
-    opts = {
-      filesystem = {
-        filtered_items = {
-          -- visible = true,
-          show_hidden_count = true,
-          hide_dotfiles = false,
-          hide_gitignored = true,
-         hide_by_name = {
-          -- '.git',
-          '.DS_Store',
-          'thumbs.db',
-          '.mono',
-          },
-          never_show = {},
-        },
-      }
-    },
     keys = {
       {
         "<leader>fe",
