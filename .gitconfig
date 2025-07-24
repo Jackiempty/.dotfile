@@ -1,6 +1,7 @@
 [user]
 	name = Jackiempty
 	email = candypaper0123@gmail.com
+	signingkey = /Users/jackiempty/.ssh/id_rsa.pub
 [core]
 	excludesfile = /Users/jackiempty/.gitignore_global
 [difftool "sourcetree"]
@@ -11,3 +12,5 @@
 	trustExitCode = true
 [commit]
 	template = /Users/jackiempty/.stCommitMsg
+[gpg]
+	format = ssh
