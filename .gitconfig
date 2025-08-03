@@ -1,16 +1,3 @@
 [user]
 	name = Jackiempty
-	email = candypaper0123@gmail.com
-	signingkey = /Users/jackiempty/.ssh/id_rsa.pub
-[core]
-	excludesfile = /Users/jackiempty/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/jackiempty/.stCommitMsg
-[gpg]
-	format = ssh
+	email = candypaper0123@gmail.com	
